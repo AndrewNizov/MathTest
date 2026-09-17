@@ -2,7 +2,6 @@
 #include "mlib.h"
 #include "lib.h"
 
-// ==================== ТЕСТЫ ДЛЯ TASK ====================
 
 
 TEST(TaskTest, ParameterizedConstructorRangeAndOperation) {
@@ -15,7 +14,6 @@ TEST(TaskTest, ParameterizedConstructorRangeAndOperation) {
     EXPECT_EQ(t.answer, t.num_1 + t.num_2);
 }
 
-// ==================== ТЕСТЫ ДЛЯ MATHTEST ====================
 
 TEST(MathTestTest, InitializationSize) {
     MathTest test(10);
@@ -24,7 +22,7 @@ TEST(MathTestTest, InitializationSize) {
 }
 
 TEST(MathTestTest, SubmitCorrectAnswer) {
-    MathTest test(3, 5, 5, '+'); // Все вопросы будут 5 + 5 = 10
+    MathTest test(3, 5, 5, '+'); 
     Task t = test.get_task(0);
 
     bool is_correct = test.submit_answer(0, t.answer);
@@ -45,7 +43,7 @@ TEST(MathTestTest, SubmitIncorrectAnswer) {
 }
 
 TEST(MathTestTest, GradeCalculation) {
-    MathTest test(5, 2, 2, '+'); // 5 вопросов, ответы 4
+    MathTest test(5, 2, 2, '+'); 
     for (int i = 0; i < 5; ++i) {
         test.submit_answer(i, 4);
     }
